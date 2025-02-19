@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" lang="mn" content="анхны веб хуудас,төгөлдөр">
+    <title>Нүүр хуудас</title>
+    <style>
+        a {
+            text-decoration: none;
+        }
+        .scrollable {
+            max-height: 550px;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body bgcolor="#212A31">
+    
+    <table border="1" width="100%" height="100%">
+        <tr height="100" >
+            <td colspan="5" align="center">
+                <font size="2" color="white" face="candara">
+                    <h1>Төгөлдөрийн танилцах веб хуудсанд тавтай морил!</h1>
+                    <h2>Танилцахыг хүсвэл доорх холбоосууд дээр дарж танилцаарай</h2>
+                </font>
+            </td>
+        </tr>
+        <tr height="40">
+            <td align="center">
+                <a href="index.html"><font color="white" face="Georgia">Нүүр хуудас</font></a>
+            </td>
+            <td align="center">
+                <a href="about.html"><font color="white" face="Georgia">Миний тухай</font></a>
+            </td>
+            <td align="center">
+                <a href="family.html"><font color="white" face="Georgia">Миний гэр бүл</font></a>
+            </td>
+            <td align="center">
+                <a href="friends.html"><font color="white" face="Georgia">Миний найзууд</font></a>
+            </td>
+            <td align="center">
+                <a href="contact.html"><font color="white" face="Georgia">Холбоо барих</font></a>
+            </td>
+        </tr>
+        <tr height="560" >
+            <td bgcolor="lightgrey" colspan="5" align="center">
+                <div class="scrollable">
+                    <font face="gibson" size="4">
+                        <h2>Интернет технологийн үндэс хичээлийн Лабораторийн ажил s2</h2>
+                        <p>Өөрсдийн тухай 5 хуудастай танилцуулга вэб сайтыг хөгжүүлнэ. Нүүр хуудас, миний тухай, миний гэр бүл, найзууд, холбоо барих гэх мэт хуудсуудтай байна. <br> Вэб сайтынхаа бүтэцийг хүснэгт table ашиглан гаргах бөгөөд бусад таг-уудыг нэмэлтээр хэрэглэнэ. <br> Хуудас хооронд шилжихдээ а таг-г ашиглана. Вэб сайтаа сонирхолтой байлгах үүднээс img ашиглан зураг оруулах гэх мэт зүйлсүүдээр чимнэ.
+                        </p>
+                            
+                        <h2>HTML хэлний чухал тагуудын талаар судалсан</h2>
+    <p align="center">HTML (HyperText Markup Language) нь вэб хуудас бүтээх үндсэн хэл бөгөөд контентыг бүтэцжүүлж, вэб хөтөчид хэрхэн харагдахыг тодорхойлдог. HTML нь олон төрлийн <strong>таг (tag)</strong> ашиглан текст, зураг, холбоос, хүснэгт, форм зэрэг элементүүдийг харуулдаг.</p>
+    
+    <p>HTML-ийн тагууд нь ихэвчлэн <strong>нээх (&lt;tag&gt;)</strong> болон <strong>хаах (&lt;/tag&gt;)</strong> гэсэн бүтэцтэй байдаг. Жишээлбэл, &lt;p&gt;...&lt;/p&gt; нь догол мөрийн таг бол &lt;h1&gt;...&lt;/h1&gt; нь гарчиг тодорхойлох таг юм.</p>
+    
+    <h2>HTML-ийн зарим чухал тагууд</h2>
+    <ul align="left">
+        <li><strong>&lt;html&gt;</strong> – Вэб хуудасны үндсэн бүтцийг тодорхойлдог.</li>
+        <li><strong>&lt;head&gt;</strong> – Метамэдээлэл (&lt;title&gt;, &lt;meta&gt;, &lt;link&gt;, &lt;style&gt;) зэрэг хуудасны нэмэлт мэдээллийг агуулдаг.</li>
+        <li><strong>&lt;body&gt;</strong> – Харагдах контентыг (текст, зураг, видео, хүснэгт гэх мэт) агуулдаг.</li>
+        <li><strong>&lt;h1&gt; - &lt;h6&gt;</strong> – Гарчиг тодорхойлох тагууд (&lt;h1&gt; нь хамгийн том, &lt;h6&gt; нь хамгийн жижиг).</li>
+        <li><strong>&lt;p&gt;</strong> – Догол мөр (paragraph) үүсгэхэд ашиглана.</li>
+        <li><strong>&lt;a&gt;</strong> – Холбоос (anchor link) үүсгэхэд ашиглана. (&lt;a href="url"&gt;...&lt;/a&gt;)</li>
+        <li><strong>&lt;img&gt;</strong> – Зураг харуулахад ашиглана. (&lt;img src="image.jpg" alt="Тайлбар"&gt;)</li>
+        <li><strong>&lt;ul&gt;, &lt;ol&gt;, &lt;li&gt;</strong> – Жагсаалт үүсгэх (&lt;ul&gt; нь тэмдэгтэй, &lt;ol&gt; нь дугаартай жагсаалт).</li>
+        <li><strong>&lt;table&gt;, &lt;tr&gt;, &lt;td&gt;</strong> – Хүснэгт үүсгэхэд ашиглана.</li>
+        <li><strong>&lt;form&gt;</strong>, <strong>&lt;input&gt;</strong>, <strong>&lt;button&gt;</strong> – Хэрэглэгчээс мэдээлэл авах форм бүтээхэд хэрэглэнэ.</li>
+        <li><strong>&lt;div&gt;</strong>, <strong>&lt;span&gt;</strong> – Вэб элементийг бүлэглэх, стилийн тохиргоо хийхэд ашиглана.</li>
+    </ul>
+    
+    <p>Эдгээр тагууд нь HTML-ийн үндсэн суурь бөгөөд вэб хуудасны бүтэц, харагдах байдлыг зохион байгуулах чухал үүрэгтэй.</p>
+                        
+                    </font>
+                </div>
+            </td>
+        </tr>
+        
+        </p>
+    </table>
+
+    <p color="white"align="center">
+        <font color="white" face="gibson">
+            &copy; 2024 миний вебсайт.
+        </font>
+    </p>
+        
+</body>
+</html>
