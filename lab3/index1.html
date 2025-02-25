@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thefacebook</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        /* header in font style */
+        nav {
+            background-color: #4C6DA8;
+            height: 130px;
+            border-bottom: 1px solid #000000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Space between logo, text, and menu */
+            padding: 5px 1px;
+        }
+
+        h1 {
+            font-family: 'titillium web', sans-serif;
+            font-size: 45px;
+            margin-right: 50px;
+            color: rgb(255, 255, 255);
+        }
+
+        nav ul {
+            float: right;
+            margin-right: 15px;
+        }
+
+        /* Styling for home, search, etc. */
+        nav ul li {
+            text-align: "left";
+            display: inline-block;
+            line-height: 45px;
+            margin: 0px 0px;
+        }
+
+        /* Home, search, etc. items */
+        a {
+            color: white;
+            /* Remove underline */
+            text-decoration: none;
+        }
+
+        /* Home, search, etc. item hover effect */
+        a:hover {
+            color: #3a3d3f;
+        }
+
+        .sidebar {
+            margin-top: -10px;
+            box-sizing: border-box;
+            border: 1px dashed;
+            float: left;
+            width: 192px;
+            height: 60px;
+            margin-block-start: 20px;
+        }
+
+        button {
+            background-color: #4C6DA8;
+            color: white;
+            display: inline-block;
+            text-decoration: none;
+            text-align: "center";
+            font-size: 12px;
+            padding: 5px 5px;
+            margin-left: 15px;
+            width: 20%;
+        }
+
+        .main {
+            margin-top: 19px;
+            padding: right;
+            margin-left: 13%;
+            margin-right: 5px;
+            border: 1px solid;
+            height: "200px";
+        }
+
+        h4 {
+            color: #f2f3f5;
+            background-color: #4C6DA8;
+        }
+
+        span {
+            color: #4C6DA8;
+        }
+
+        h3 {
+            color: #4C6DA8;
+            text-align: left;
+        }
+
+        .sidebar1 {
+            display: table;
+            color: black;
+            border: 1px dashed;
+            padding: 27px;
+            width: 136px;
+            background-color: #ffffff;
+            margin-top: -914px;
+            height: 1px;
+        }
+
+        .sidebar1 a {
+            text-decoration: none;
+            color: #4C6DA8;
+            font-weight: normal;
+        }
+
+        .sidebar1 a:hover {
+            color: #0b0c0c;
+        }
+
+        .sidebar1 ul {
+            color: blue;
+            padding: 0px;
+            margin: 0;
+            border-bottom: none;
+            text-align: "center";
+        }
+
+        .sidebar1 li {
+            border-bottom: 1px solid #ccc;
+            border-bottom: none;
+        }
+
+        .sidebar2 {
+            display: table;
+            color: black;
+            border: 1px solid rgb(11, 11, 11);
+            padding: 16px;
+            width: 158px;
+            background-color: #ffffff;
+            margin-top: 2px;
+            height: auto;
+        }
+
+        .sidebar2 a {
+            text-decoration: none;
+            color: #4C6DA8;
+        }
+
+        img {
+            width: 100%;
+            height: 50%;
+        }
+    </style>
+</head>
+<body style="margin-left: 2px; margin-right: 2px; margin-top: 2px;">
+    <nav>
+        <ul class="header-content">
+            <img src="C:\Users\Tuguldure17\lab3\picture\Screenshot 2025-02-26 002538.png" alt="Thefacebook Logo" class="logo">
+        </ul>
+        <ul class="menu">
+            <h1>[ thefacebook]</h1>
+            <li> <a href="#" target="_blank">home</a></li>
+            <li> <a href="#" target="_blank">search</a></li>
+            <li> <a href="#" target="_blank">global</a></li>
+            <li> <a href="#" target="_blank">social net</a></li>
+            <li> <a href="#" target="_blank">invite</a></li>
+            <li> <a href="#" target="_blank">faq</a></li>
+            <li> <a href="#" target="_blank">logout</a></li>
+        </ul>
+    </nav>
+    <div class="sidebar">
+        <input type="text" name="email"> <br>
+        <label style="float: left">Quick search</label>
+        <button type="button" value="Go">Go</button>
+    </div>
+    <div class="main">
+        <h4><span>..</span>Brian Moore's Profile</h4>
+        <h3 style="text-align : center">[WELCOME TO LAB3]</h3>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque et exercitationem quos natus id ab earum quas, quaerat beatae eius eos deserunt sapiente incidunt cumque pariatur non assumenda illum blanditiis.
+            <img src="https://static.vecteezy.com/system/resources/previews/025/220/125/non_2x/picture-a-captivating-scene-of-a-tranquil-lake-at-sunset-ai-generative-photo.jpg" alt="gfnns" height="100px" width="200px">
+        </p>
+    </div>
+    <br>
+    <div class="sidebar1">
+        <a href="#" target="_blank">My Profile [ edit ]</a> <br>
+        <a href="#" target="_blank">My Friends</a> <br>
+        <a href="#" target="_blank">My Groups</a> <br>
+        <a href="#" target="_blank">My Parties</a> <br>
+        <a href="#" target="_blank">My Messages</a> <br>
+        <a href="#" target="_blank">My Account</a> <br>
+        <a href="#" target="_blank">My Privacy</a> <br>
+    </div>
+    <div class="sidebar2">
+        <p>
+            <img src="C:\Users\tuugi\OneDrive\Pictures\Screenshots 1\Screenshot 2025-02-25 130701.png" width="158px" height="320px">
+        </p>
+    </div>
+</body>
+</html>
