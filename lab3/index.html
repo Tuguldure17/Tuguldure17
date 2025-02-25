@@ -1,35 +1,176 @@
-<html>
-<head><title>CSS жишээ</title>
-<style>
-body { 	font-family:tahoma;
-		font-size:0.8em;    }
-#layout { width: 800px ;
-		    margin-left: auto ;
-  		    margin-right: auto; }
-#content {  margin-left:200px;
-  height:300px;
-  padding: 4px ;
-  border: 1px solid gray;
-}
-#navbar {  float: left;
-  width: 198px;
-  height:308px; 
-  border: 1px solid gray;
-}
-#footer {  clear: both ;
-  border: 1px solid gray;
-}
-#header {  text-align: center ;
-  height:100px;
-  border: 1px solid gray;
-}
-</style></head>
-<body>
-	<div id="layout">
-	<div id="header">Top Header</div>
-	<div id="navbar">Navigation</div>
-	<div id="content">Content here</div>
-	<div id="footer">Bottom Footer</div>
-</div>
-</body></html>
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Facebook - 2004 Style</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #D8DCE6;
+            margin: 0;
+            padding: 0;
+        }
 
+        #container {
+            width: 800px;
+            margin: 20px auto;
+            background-color: white;
+            border: 1px solid gray;
+        }
+
+        /* Updated Header Styling */
+        #header {
+            background: #3B5998;
+            color: white;
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+            font-family: "Verdana", sans-serif;
+            text-transform: lowercase;
+            height: 100px; /* Increased height for better visibility */
+            line-height: 100px;
+        }
+
+        #navbar {
+            width: 200px;
+            float: left;
+            background: #E7EBF2;
+            padding: 10px;
+            min-height: 600px;
+            border-right: 1px solid gray;
+            text-align: center;
+        }
+
+        .menu-box {
+            border: 2px solid #3B5998;
+            padding: 10px;
+            background: white;
+            border-radius: 8px;
+        }
+
+       
+        #content {
+            margin-left: 220px;
+            padding: 20px;
+        }
+
+        .profile-section {
+            border: 1px solid gray;
+            padding: 10px;
+            margin-bottom: 10px;
+            background: #F7F7F7;
+        }
+
+        .profile-section h3 {
+            margin: 0;
+            background: #D8DCE6;
+            padding: 5px;
+            font-size: 14px;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border: 1px solid gray;
+            display: block;
+            margin: 10px 0;
+        }
+
+        .friends-list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .friend {
+            width: 100px;
+            text-align: center;
+            margin: 5px;
+        }
+
+        .friend img {
+            width: 80px;
+            height: 80px;
+            border: 1px solid gray;
+        }
+
+        #footer {
+            clear: both;
+            background: #3B5998;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 12px;
+        }
+
+        /* New bounding box for buttons */
+        .button-box {
+            border: 2px solid #3B5998;
+            padding: 10px;
+            text-align: center;
+            margin-top: 10px;
+            background-color: white;
+            border-radius: 8px;
+        }
+        .button-box button:hover {
+            background-color: #2D4373;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <div id="header">[thefacebook]</div> 
+
+    <div id="navbar">
+        <div class="menu-box">
+            <input type="text" placeholder="Search...">
+            <a href="#">My Profile</a>
+            <a href="#">My Friends</a>
+            <a href="#">My Groups</a>
+            <a href="#">My Messages</a>
+            <a href="#">My Account</a>
+            <a href="#">Privacy</a>
+        </div>
+    </div>
+
+    <div id="content">
+        <div class="profile-section">
+            <h3>Picture</h3>
+            <img src="https://th.bing.com/th/id/OIP.tPsBeayaSLxzgSJG-RbbtAHaHa?rs=1&pid=ImgDetMain" alt="Profile" class="profile-img">
+            <!-- New bounding box with buttons -->
+            <div class="button-box">
+                <button>Send Tuugy  Message</button>
+                <button>Poke Him!</button>
+            </div>
+        </div>
+
+        <div class="profile-section">
+            <h3>Connection</h3>
+            <p>You are in a relationship with Brian.</p>
+        </div>
+
+        <div class="profile-section">
+            <h3>Friends at Puget Sound</h3>
+            <div class="friends-list">
+                <div class="friend">
+                    <img src="https://via.placeholder.com/80" alt="Friend">
+                    <p>Kerala Hise</p>
+                </div>
+                <div class="friend">
+                    <img src="https://via.placeholder.com/80" alt="Friend">
+                    <p>Jennifer McFadden</p>
+                </div>
+                <div class="friend">
+                    <img src="https://via.placeholder.com/80" alt="Friend">
+                    <p>Amy Graeber</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">© 2004 TheFacebook. All rights reserved.</div>
+</div>
+
+</body>
+</html>
