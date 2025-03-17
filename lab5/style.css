@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+}
+/*hello world iin background heseg*/
+.jumbotron {
+    background: #1b1b6c;
+    color: rgb(255, 255, 255);
+    padding: 50px;
+
+}
+
+.jumbotron h1 {
+    font-size: 3em;
+    font-weight: bold;
+    align-items: left;
+    color: white;
+}
+
+.messages-panel {
+    color: rgb(249, 246, 246);
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.panel-heading.messages-panel {
+    background-color: #f61067; /* Pink background */
+}
+/* Change the background color of the SEND button */
+.btn-primary {
+    background-color: #f61067; /* Pink background */
+    border-color: #f61067; /* Matching border color */
+}
+
+.btn-primary:hover {
+    background-color: #e50f5f; /* Optional: Darken the color on hover */
+    border-color: #e50f5f; /* Optional: Darken the border on hover */
+}
+
+/* Change background color and text color for the 'Welcome Candidate!' heading */
+.panel-body h4 {
+    background-color: #9090A5; /* Background color */
+    color: white; /* Text color */
+    padding: 10px; /* Optional: Add padding for better appearance */
+}
+
+
+.video-container {
+    margin-top: 20px;
+}
+
+.footer {
+    background: #13124f;
+    color: white;
+    padding: 15px;
+    margin-top: 30px;
+}
+/*heading goes here iin dood taliin zuraasiin tohirgoo*/
+.custom-line {
+    height: 1px; 
+    background-color: #b0b3b6; /* Хөх өнгө */
+    margin-top: 10px; /* Зай өгнө */
+}
+/*I don't watch Star Trek and don't get this reference dood zuraas bolon text iin ungu*/
+.underline-text {
+    text-decoration: underline; /* Доогуур зураас гаргана */
+    color: #a8a0a0; /* Хөх өнгө */
+}
+/* Ensure both elements take the same width */
+.alert-container, .video-container {
+    width: 100%;
+    margin: 20px 0;
+}
+.custom-btn {
+    background-color: #f61067; /* New background color */
+    border-radius: 0;
+
+}
+
+
+/* Custom badge style */
+.custom-badge {
+    background-color: #4CAF50; /* New background color for badge */
+    color: rgb(0, 0, 0); /* Ensure text is visible on the new background */
+}
+
+
+
+
+
