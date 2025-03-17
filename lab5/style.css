@@ -3,11 +3,28 @@ body {
 }
 /*hello world iin background heseg*/
 .jumbotron {
-    background: #1b1b6c;
+    background: #13124f;
     color: rgb(255, 255, 255);
     padding: 50px;
 
 }
+
+/* webjunto iin background ungu */
+.navbar-inverse {
+    background-color: #352ba5; /* Set navbar background color */
+    border-color: #352ba5; /* Match border color */
+}
+
+/* webjunto ungiig text*/
+.navbar-inverse .navbar-brand {
+    color: rgb(255, 253, 253); /* Set text color to white */
+}
+.alert-container {
+    background-color: #9090a5; /* Change background color of alert */
+    color: white; /* Ensure text is visible on the new background */
+}
+
+
 
 .jumbotron h1 {
     font-size: 3em;
@@ -16,6 +33,7 @@ body {
     color: white;
 }
 
+
 .messages-panel {
     color: rgb(249, 246, 246);
     font-size: 16px;
@@ -23,24 +41,25 @@ body {
 }
 
 .panel-heading.messages-panel {
-    background-color: #f61067; /* Pink background */
+    background-color: #f61067;
+    border-radius: 0; /* Pink background */
+    color:#fdfdfd;
 }
 /* Change the background color of the SEND button */
 .btn-primary {
     background-color: #f61067; /* Pink background */
-    border-color: #f61067; /* Matching border color */
+    border-color: #f61067;
+    border-radius: 0; /* Matching border color */
 }
 
-.btn-primary:hover {
-    background-color: #e50f5f; /* Optional: Darken the color on hover */
-    border-color: #e50f5f; /* Optional: Darken the border on hover */
-}
 
-/* Change background color and text color for the 'Welcome Candidate!' heading */
+
+/* 'Welcome Candidate!'  */
 .panel-body h4 {
-    background-color: #9090A5; /* Background color */
-    color: white; /* Text color */
-    padding: 10px; /* Optional: Add padding for better appearance */
+    background-color: #ffffff; /* Background color */
+    color: black; /* Text color */
+    padding: 10px; 
+    margin-top: 3px;/* Optional: Add padding for better appearance */
 }
 
 
@@ -52,23 +71,24 @@ body {
     background: #13124f;
     color: white;
     padding: 15px;
-    margin-top: 30px;
-}
+    margin-top: 30px;}
+    
 /*heading goes here iin dood taliin zuraasiin tohirgoo*/
 .custom-line {
     height: 1px; 
-    background-color: #b0b3b6; /* Хөх өнгө */
+    background-color: #a2a5a7; /* Хөх өнгө */
     margin-top: 10px; /* Зай өгнө */
 }
 /*I don't watch Star Trek and don't get this reference dood zuraas bolon text iin ungu*/
 .underline-text {
-    text-decoration: underline; /* Доогуур зураас гаргана */
-    color: #a8a0a0; /* Хөх өнгө */
+    text-decoration: underline; 
+    color: #ffffff; 
 }
 /* Ensure both elements take the same width */
 .alert-container, .video-container {
     width: 100%;
     margin: 20px 0;
+    border-radius: 0;
 }
 .custom-btn {
     background-color: #f61067; /* New background color */
@@ -79,9 +99,61 @@ body {
 
 /* Custom badge style */
 .custom-badge {
-    background-color: #4CAF50; /* New background color for badge */
+    background-color: #0cf714; /* New background color for badge */
     color: rgb(0, 0, 0); /* Ensure text is visible on the new background */
 }
+
+/*cool iin syle*/
+.btn-success{
+    background-color: #f61067; /* New background color */
+    border-color: #f61067; /* Matching border color */
+}
+/* lame iin sstyle*/
+.btn-danger2{
+    background-color: #fdfdfd; /* New background color */
+    border-color: #01af10; /* Matching border color */
+    color:rgb(9, 192, 18);
+}
+        /* Custom progress bar colors */
+        .progress-bar-success {
+            background-color: #f61067; /* Green for success */
+        }
+
+        .progress-bar-danger1 {
+            background-color: #2ad392; /* Custom red color for danger */
+        }
+
+        /* I don't watch Star Trek and don't get this reference background*/
+        .custom-background {
+            background-color: #352ba5; /* Set background color */
+            color:#fdfdfd;
+            padding: 10px; /* Optional: adds some padding around the text */
+            border-radius: 0px; /* Optional: gives a rounded edge */
+        }
+        /*input greeting background*/
+        .form-control{
+            background-color: #1b1b6c; /* New background color */
+            border-color: #1b1b6c; /* Matching border color */
+            color: #fdfdfd;
+            border-radius: 0%;
+        }
+        .custom-welcome-cand {
+            background-color: #9090a5; /* Set the background color to yellow */
+            padding: 1px;
+            color: #ffffff;
+        }
+        .custom-full-header{
+            background-color: #13124f;
+        }
+        .custom-text-center{
+            color: white; /* Set the text color to white */
+            text-align: center; /* Center the text */
+            margin-top: 20px; /* Optional, to add space from the top */
+            margin-bottom: 20px; /* Optional, to add space below */
+        }
+        .custom-welcome-cand h3 {
+            text-align: center; /* Center the heading */
+        }
 
 
 
