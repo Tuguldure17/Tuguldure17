@@ -72,6 +72,7 @@
     width: 400px;
     height: 400px;
     margin-bottom: auto;
+    background-size: cover;
 }
 
 .footer {
