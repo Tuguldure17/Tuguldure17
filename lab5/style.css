@@ -1,5 +1,9 @@
-body {
-    font-family: Arial, sans-serif;
+@media only screen and (min-width:769px){
+    body {
+        font-family: Arial, sans-serif;
+        border: 4px orange;
+        width: 1600px;
+    }
 }
 /*hello world iin background heseg*/
 .jumbotron {
@@ -64,7 +68,10 @@ body {
 
 
 .video-container {
-    margin-top: 20px;
+    margin-top: 0px;
+    width: 400px;
+    height: 400px;
+    margin-bottom: auto;
 }
 
 .footer {
@@ -155,7 +162,9 @@ body {
             text-align: center; /* Center the heading */
         }
 
+@media only screen and (min-width:769px){
 
+}
 
 
 
