@@ -2,7 +2,7 @@
     body {
         font-family: Arial, sans-serif;
         border: 4px orange;
-        width: 1600px;
+        width: auto;
     }
 }
 /*hello world iin background heseg*/
@@ -64,6 +64,7 @@
     color: black; /* Text color */
     padding: 10px; 
     margin-top: 3px;/* Optional: Add padding for better appearance */
+    font-size: smaller;
 }
 
 
@@ -90,7 +91,8 @@
 /*I don't watch Star Trek and don't get this reference dood zuraas bolon text iin ungu*/
 .underline-text {
     text-decoration: underline; 
-    color: #ffffff; 
+    color: #ffffff;
+    font-size: smaller; 
 }
 /* Ensure both elements take the same width */
 .alert-container, .video-container {
@@ -125,10 +127,12 @@
         /* Custom progress bar colors */
         .progress-bar-success {
             background-color: #f61067; /* Green for success */
+            height: 10PX;
         }
 
         .progress-bar-danger1 {
             background-color: #2ad392; /* Custom red color for danger */
+            height: 10px;
         }
 
         /* I don't watch Star Trek and don't get this reference background*/
@@ -161,8 +165,48 @@
         }
         .custom-welcome-cand h3 {
             text-align: center; /* Center the heading */
+            width:100%;
         }
-
+        .custom-welcome-cand {
+            
+            width:100%;
+            margin-bottom: 0;
+        }
+        
+        .vote-buttons {
+            display: flex; /* Flexbox ашиглах */
+            gap:20px;
+        }
+        
+        .vote-buttons .btn {
+            width: 50%; 
+            height: 40px;
+            text-align: center; 
+            padding: 0px; 
+            font-weight: bold;
+            border-radius: 0; 
+        }
+        .progress {
+            height: 10px;
+            
+            border-radius: 0;
+        }
+        
+        .progress-bar {
+            height: 100%; 
+        }
+        .form-control {
+            background-color: #1b1b6c;
+            border: none;
+            color: #ffffff;
+            border-radius: 0;
+            padding: 10px;
+            font-size: 16px;
+            border-top: 1px solid #b0b0b0; 
+            border-bottom: 3px solid #b0b0b0; 
+        }
+        
+        
 @media only screen and (min-width:769px){
 
 }
