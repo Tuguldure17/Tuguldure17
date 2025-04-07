@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday, Sunder! 🎉</title>
+
+  <!-- 🌸 Google Fonts for cute style -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(to top right, #ffe6f0, #fff0f5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+      text-align: center;
+      padding: 20px;
+      color: #4d2c3d;
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 3.5rem;
+      color: #ff4081;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px #ffd6e7;
+    }
+
+    p {
+      font-size: 1.3rem;
+      max-width: 700px;
+      margin: 15px auto;
+      line-height: 1.7;
+    }
+
+    .heart {
+      font-size: 2.8rem;
+      animation: pulse 1.2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    .photo {
+      margin-top: 30px;
+      border-radius: 20px;
+      max-width: 300px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .photo:hover {
+      transform: scale(1.05);
+    }
+
+    .video {
+      margin-top: 30px;
+    }
+
+    iframe {
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Balloons */
+    .balloons {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .balloon {
+      position: absolute;
+      bottom: -150px;
+      width: 30px;
+      height: 50px;
+      background-color: #ff69b4;
+      border-radius: 50%;
+      animation: float 10s infinite ease-in-out;
+    }
+
+    .balloon::after {
+      content: '';
+      position: absolute;
+      top: 50px;
+      left: 50%;
+      width: 2px;
+      height: 30px;
+      background: #aaa;
+      transform: translateX(-50%);
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-120vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="balloons">
+    <!-- Floating balloons -->
+    <div class="balloon" style="left: 10%; background-color: #ff69b4;"></div>
+    <div class="balloon" style="left: 25%; background-color: #ffd700;"></div>
+    <div class="balloon" style="left: 40%; background-color: #87ceeb;"></div>
+    <div class="balloon" style="left: 60%; background-color: #ffa07a;"></div>
+    <div class="balloon" style="left: 75%; background-color: #da70d6;"></div>
+  </div>
+
+  <h1>🎂 Happy Birthday, Sunder! 🎉</h1>
+  <div class="heart">💖</div>
+  
+  <p>
+    Even though we’re miles apart, you’re always close to my heart. <br />
+    I hope your birthday is filled with joy, laughter, and everything that makes you smile. <br />
+    I miss you so much, and I can’t wait until we get to catch up and make more amazing memories together!
+  </p>
+  
+  <img src="/lab0/sundere1/487677789_1366933401314539_5433776319879042286_n.jpg" alt="Photo of Sunder" class="photo" />
+  
+  <div class="video">
+    <p>🎥 Here's a special video for you:</p>
+    <iframe width="360" height="640" src="https://www.youtube.com/embed/JG6ZjJWJHRQ" title="Birthday Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+
+  <!-- Optional: Background music -->
+  <!--
+  <audio autoplay loop>
+    <source src="your-music.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+  -->
+
+</body>
+</html>
