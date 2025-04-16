@@ -26,7 +26,7 @@ body {
   font-size: 16px; /* Changed from 100px */
   line-height: 1.7;
   color: var(--secondary);
-  background-color: #fff;
+  background-color: #ffffff;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -921,6 +921,7 @@ h3.display-4.mb-5 {
 }
 .col-md-8.col-lg-6 figure img {
   width: 100%;
+  aspect-ratio: 16/9;
   height: auto;
   display: block;
   border-radius: 0.5rem;
@@ -1195,12 +1196,15 @@ footer .btn-white:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
-.row.gy-6 {
-  margin-top: -1.5rem; /* Багануудын дээд талын зайг багасгах */
-  margin-bottom: -1.5rem; /* Багануудын доод талын зайг багасгах */
+@media (min-width: 768px) {
+  .row.gy-6 {
+    margin-top: -1.5rem; /* Багануудын дээд талын зайг багасгах */
+    margin-bottom: -1.5rem; /* Багануудын доод талын зайг багасгах */
+  }
 }
 
 .row.gy-6 > div {
+  
   padding-top: 1.5rem; /* Багануудын дээд талын дотор зайг нэмэх */
   padding-bottom: 1.5rem; /* Багануудын доод талын дотор зайг нэмэх */
 }
