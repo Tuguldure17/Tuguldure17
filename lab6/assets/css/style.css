@@ -141,6 +141,7 @@ p {
 }
 
 .col-md-4 {
+  word-wrap: break-word;
   flex: 0 0 100%;
   max-width: 100%;
   padding: 0 15px;
@@ -150,6 +151,7 @@ p {
   flex: 0 0 100%;
   max-width: 100%;
   padding: 0 15px;
+  word-wrap: break-word;
 }
 
 .mx-auto {
@@ -1103,11 +1105,11 @@ footer .container {
   padding-bottom: 0 !important; /* Override the pb-7 */
   padding-left: 2rem;
   padding-right: 2rem;
-  width: 60%;
+  width: 100%;
 }
 
 .container.pt-20.pt-lg-21.pb-7 > div:first-of-type {
-  display: space-around !important; /* Flexbox ашиглан зохион байгуулалт хийх */
+  display: flex !important; /* Flexbox ашиглан зохион байгуулалт хийх */
   flex-wrap: nowrap !important; /* Талбаруудыг нэг эгнээнд байлгах */
   justify-content: center !important; /* Талбаруудын хооронд зайг тэгш хуваарилах */
   gap: 0rem; /* Талбаруудын хооронд зай нэмэх */
@@ -1115,7 +1117,7 @@ footer .container {
   margin-left: auto; /* Зүүн margin-г 1rem болгох */
   margin-right: auto; /* Баруун margin-г 1rem болгох */
   justify-content: center;
-  flex: 1;
+  flex: 1 1 auto; 
   padding: 0 1rem;
 }
 .container.pt-20.pt-lg-21.pb-7 {
@@ -1126,7 +1128,16 @@ footer .container {
 .container.pt-20.pt-lg-21.pb-7 > div:first-of-type > div {
   font-size: 1rem; /* Элементүүдийн фонтын хэмжээг сэргээх */
 }
-
+@media screen and (max-width: 768px) {
+  footer .container {
+    flex: 1, 1, 100%;
+    padding-top: 5rem !important; /* Mobile-д тохируулах */
+    padding-bottom: 0 !important;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+}
 
 footer h3.h2, 
 footer h4.widget-title {
@@ -1618,3 +1629,9 @@ header.wrapper.bg-gray {
 .more{
   text-decoration: none;
 }
+@media only screen  and (max-width: 768px) {
+  .footer-logo {
+    margin-bottom: 1rem;
+  }
+}
+

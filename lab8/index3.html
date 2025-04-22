@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Анхны тоонд задлах</title>
+</head>
+<body>
+  <h2> Бодлого-3 Гараас өгсөн тоог анхны тоонуудын нийлбэрт задлах</h2>
+  <input type="number" id="numberInput" placeholder="Эерэг бүхэл тоо оруулна уу">
+  <button onclick="primeSumDecomposition()">Задлах</button>
+  <p id="primeSumResult"></p>
+
+  <script>
+    function isPrime(n) {
+      if (n <= 1) return false;
+      for (let i = 2; i <= Math.sqrt(n); i++) {
+        if (n % i === 0) return false;
+      }
+      return true;
+    }
+
+    function primeSumDecomposition() {
+      const input = document.getElementById("numberInput").value.trim();
+      const num = Number(input);
+      const resultElement = document.getElementById("primeSumResult");
+
+      // Оролтын зөв эсэхийг шалгах
+      if (!Number.isInteger(num) || num <= 0) {
+        resultElement.innerText = "Зөвхөн эерэг бүхэл тоо оруулна уу!";
+        return;
+      }
+
+      let result = [];
+      let remaining = num;
+      let i = 2;
+
+      while (remaining > 0) {
+        if (isPrime(i) && i <= remaining) {
+          result.push(i);
+          remaining -= i;
+        } else {
+          i++;
+        }
+      }
+
+      resultElement.innerText = `${num}-ийн задлал: ` + result.join(" + ");
+    }
+  </script>
+</body>
+</html>
