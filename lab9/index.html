@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Валютын Хөрвүүлэгч</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #405c63;
+    }
+    .container {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      text-align: center;
+    }
+    input, select {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #131413;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .calculator-buttons {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .calculator-buttons button {
+      padding: 20px;
+      font-size: 18px;
+      background-color: #020202;
+      border: 1px solid #3d3737;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .calculator-buttons button:hover {
+      background-color: #ddd;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Валютын Хөрвүүлэгч</h2>
+
+    <input type="number" id="amountInput" placeholder="Тоо оруулна уу" readonly>
+    <div class="calculator-buttons">
+      <button onclick="appendNumber(1)">1</button>
+      <button onclick="appendNumber(2)">2</button>
+      <button onclick="appendNumber(3)">3</button>
+      <button onclick="appendNumber(4)">4</button>
+      <button onclick="appendNumber(5)">5</button>
+      <button onclick="appendNumber(6)">6</button>
+      <button onclick="appendNumber(7)">7</button>
+      <button onclick="appendNumber(8)">8</button>
+      <button onclick="appendNumber(9)">9</button>
+      <button onclick="appendNumber(0)">0</button>
+      <button onclick="clearInput()">C</button>
+      <button onclick="appendDecimal()">.</button>
+    </div>
+
+    <select id="fromCurrency">
+      <option value="USD">USD</option>
+      <option value="EUR">EUR</option>
+      <option value="POUND">POUND</option>
+      <option value="WON">WON</option>
+      <option value="YEN">YEN</option>
+      <option value="YAN">YAN</option>
+      <option value="MNT">MNT</option>
+    </select>
+
+    <select id="toCurrency">
+      <option value="USD">USD</option>
+      <option value="EUR">EUR</option>
+      <option value="POUND">POUND</option>
+      <option value="WON">WON</option>
+      <option value="YEN">YEN</option>
+      <option value="YAN">YAN</option>
+      <option value="MNT">MNT</option>
+    </select>
+
+    <button onclick="convertCurrency()">Хөрвүүлэх</button>
+    <p id="result"></p>
+  </div>
+
+  <script>
+    const exchangeArray = [
+      {'name': 'USD', 'value': 1},
+      {'name': 'EUR', 'value': 0.88},
+      {'name': 'POUND', 'value': 0.75},
+      {'name': 'WON', 'value': 1433},
+      {'name': 'YEN', 'value': 142},
+      {'name': 'YAN', 'value': 7.31},
+      {'name': 'MNT', 'value': 3537}
+    ];
+
+    let inputAmount = '';
+
+    function appendNumber(number) {
+      inputAmount += number;
+      document.getElementById('amountInput').value = inputAmount;
+    }
+
+    function clearInput() {
+      inputAmount = '';
+      document.getElementById('amountInput').value = inputAmount;
+    }
+
+    function appendDecimal() {
+      if (!inputAmount.includes('.')) {
+        inputAmount += '.';
+        document.getElementById('amountInput').value = inputAmount;
+      }
+    }
+
+    function convertCurrency() {
+      const amount = parseFloat(inputAmount);
+      const fromCurrency = document.getElementById('fromCurrency').value;
+      const toCurrency = document.getElementById('toCurrency').value;
+
+      if (isNaN(amount) || amount <= 0) {
+        document.getElementById('result').innerText = 'Буруу тоо оруулсан байна. Дахин оролдоно уу.';
+        return;
+      }
+
+      const fromCurrencyValue = exchangeArray.find(currency => currency.name === fromCurrency).value;
+      const toCurrencyValue = exchangeArray.find(currency => currency.name === toCurrency).value;
+
+      const convertedAmount = (amount / fromCurrencyValue) * toCurrencyValue;
+      document.getElementById('result').innerText = `${amount} ${fromCurrency} = ${convertedAmount.toFixed(2)} ${toCurrency}`;
+    }
+  </script>
+
+</body>
+</html>
