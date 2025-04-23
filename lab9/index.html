@@ -60,7 +60,7 @@
   <div class="container">
     <h2>Валют Хөрвүүлэгч</h2>
 
-    <input type="number" id="amountInput" placeholder="Тоо оруулна уу" readonly>
+    <input type="text" id="amountInput" placeholder="Тоо оруулна уу" readonly>
     <div class="calculator-buttons">
       <button onclick="tooNemeh(1)">1</button>
       <button onclick="tooNemeh(2)">2</button>
@@ -131,7 +131,7 @@
 
     function appendDecimal() {
       if (!inputAmount.includes('.')) {
-        inputAmount += '.';
+        inputAmount += inputAmount==='' ? '0.' : '.';
         document.getElementById('amountInput').value = inputAmount;
       }
     }
@@ -156,19 +156,25 @@
     }
 
     function deedtaslal(value) {
-      const parts = value.toString().split('.');
-      const integerPart = parts[0];
-      const decimalPart = parts.length > 1 ? '.' + parts[1] : '';
+  const parts = value.toString().split('.');
+  const integerPart = parts[0];
+  const decimalPart = parts.length > 1 ? '.' + parts[1] : '';
 
-      const taslal = integerPart
-        .split('')
-        .reverse()
-        .map((digit, index) => (index > 0 && index % 3 === 0) ? `'` + digit : digit)
-        .reverse()
-        .join('');
+  // hoid talaas 3 oron burt ' avna
+  let result = '';
+  let len = integerPart.length;
+  // 3 oron yvaad ' avna'
+  let firstGroupLen = len % 3 === 0 ? 3 : len % 3;
+  result += integerPart.slice(0, firstGroupLen);
 
-      return taslal + decimalPart;
-    }
+  for (let i = firstGroupLen; i < len; i += 3) {
+    result += `'` + integerPart.slice(i, i + 3);
+  }
+
+  return result + decimalPart;
+}
+
+
   </script>
 
 </body>
