@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Валютын Хөрвүүлэгч</title>
+  <title>Валют Хөрвүүлэгч</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -17,7 +17,7 @@
     .container {
       background-color: white;
       padding: 20px;
-      border-radius: 10px;
+      border-radius: 5px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       width: 300px;
       text-align: center;
@@ -40,13 +40,10 @@
       border-radius: 5px;
       cursor: pointer;
     }
-    button:hover {
-      background-color: #315b33;
-    }
     .calculator-buttons {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
+      gap: 8px;
     }
     .calculator-buttons button {
       padding: 20px;
@@ -62,22 +59,23 @@
 <body>
 
   <div class="container">
-    <h2>Валютын Хөрвүүлэгч</h2>
+    <h2>Валют Хөрвүүлэгч</h2>
 
     <input type="number" id="amountInput" placeholder="Тоо оруулна уу" readonly>
     <div class="calculator-buttons">
-      <button onclick="appendNumber(1)">1</button>
-      <button onclick="appendNumber(2)">2</button>
-      <button onclick="appendNumber(3)">3</button>
-      <button onclick="appendNumber(4)">4</button>
-      <button onclick="appendNumber(5)">5</button>
-      <button onclick="appendNumber(6)">6</button>
-      <button onclick="appendNumber(7)">7</button>
-      <button onclick="appendNumber(8)">8</button>
-      <button onclick="appendNumber(9)">9</button>
-      <button onclick="appendNumber(0)">0</button>
+      <button onclick="tooNemeh(1)">1</button>
+      <button onclick="tooNemeh(2)">2</button>
+      <button onclick="tooNemeh(3)">3</button>
+      <button onclick="tooNemeh(4)">4</button>
+      <button onclick="tooNemeh(5)">5</button>
+      <button onclick="tooNemeh(6)">6</button>
+      <button onclick="tooNemeh(7)">7</button>
+      <button onclick="tooNemeh(8)">8</button>
+      <button onclick="tooNemeh(9)">9</button>
+      <button onclick="tooNemeh(0)">0</button>
       <button onclick="appendDecimal()">.</button>
       <button onclick="clearInput()">C</button>
+      <button onclick="clearInputX()">Clear</button>
       
       
     </div>
@@ -102,7 +100,7 @@
       <option value="MNT">MNT</option>
     </select>
 
-    <button onclick="convertCurrency()">Хөрвүүлэх</button>
+    <button onclick="hurwuuleh()">Хөрвүүлэх</button>
     <p id="result"></p>
   </div>
 
@@ -119,15 +117,21 @@
 
     let inputAmount = '';
 
-    function appendNumber(number) {
+    function tooNemeh(number) {
       inputAmount += number;
       document.getElementById('amountInput').value = inputAmount;
     }
-
+    // buh input-iig ustgana
     function clearInput() {
       inputAmount = '';
       document.getElementById('amountInput').value = inputAmount;
     }
+    // suuliin temdegt ustgana
+    function clearInputX() {
+  inputAmount = inputAmount.slice(0, -1); // Сүүлийн цифрийг хасна
+  document.getElementById("amountInput").value = inputAmount; // Шинэчилнэ
+}
+ 
 
     function appendDecimal() {
       if (!inputAmount.includes('.')) {
@@ -136,7 +140,7 @@
       }
     }
 
-    function convertCurrency() {
+    function hurwuuleh() {
       const amount = parseFloat(inputAmount);
       const fromCurrency = document.getElementById('fromCurrency').value;
       const toCurrency = document.getElementById('toCurrency').value;
