@@ -12,7 +12,7 @@
       align-items: center;
       height: 100vh;
       margin: 0;
-      background-color: #405c63;
+      background-color: #000000;
     }
     .container {
       background-color: white;
@@ -33,7 +33,7 @@
     button {
       width: 100%;
       padding: 10px;
-      background-color: #131413;
+      background-color: #151616;
       color: white;
       font-size: 16px;
       border: none;
@@ -41,7 +41,7 @@
       cursor: pointer;
     }
     button:hover {
-      background-color: #45a049;
+      background-color: #315b33;
     }
     .calculator-buttons {
       display: grid;
@@ -56,9 +56,7 @@
       border-radius: 5px;
       cursor: pointer;
     }
-    .calculator-buttons button:hover {
-      background-color: #ddd;
-    }
+    
   </style>
 </head>
 <body>
@@ -78,8 +76,10 @@
       <button onclick="appendNumber(8)">8</button>
       <button onclick="appendNumber(9)">9</button>
       <button onclick="appendNumber(0)">0</button>
-      <button onclick="clearInput()">C</button>
       <button onclick="appendDecimal()">.</button>
+      <button onclick="clearInput()">C</button>
+      
+      
     </div>
 
     <select id="fromCurrency">
