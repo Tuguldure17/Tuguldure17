@@ -1,0 +1,9 @@
+
+[
+  { "category": "English", "word": "APPLE" },
+  { "category": "Fruits", "word": "BANANA" },
+  { "category": "Science", "word": "GRAVITY" },
+  { "category": "Programming", "word": "JAVASCRIPT" },
+  { "category": "Math", "word": "ALGEBRA" },
+  { "category": "General", "word": "MONGOLIA" }
+]
