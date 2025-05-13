@@ -35,22 +35,24 @@
                 <div id="score" class="info-value">0</div>
             </div>
         </div>
-        
+        <!--Hangman iihaa dursuudiiig zurah heseg-->
         <div id="hangman-container">
             <svg id="hangman-drawing" viewBox="0 0 200 200">
-                <!-- Gallows -->
+                <!-- Duujluuriin zurj bga heseg -->
                 <line x1="40" y1="180" x2="160" y2="180" stroke="black" stroke-width="3" />
                 <line x1="60" y1="180" x2="60" y2="20" stroke="black" stroke-width="3" />
                 <line x1="60" y1="20" x2="120" y2="20" stroke="black" stroke-width="3" />
                 <line x1="120" y1="20" x2="120" y2="40" stroke="black" stroke-width="3" />
                 
-                <!-- Man parts (initially hidden) -->
+                <!-- hunii biyiin hesguudiig zurj bga heseg tolgoi ih biy 2gar 2hul -->
                 <circle id="head" cx="120" cy="60" r="20" fill="transparent" stroke="black" stroke-width="3" style="display: none;" />
                 <line id="body" x1="120" y1="80" x2="120" y2="120" stroke="black" stroke-width="3" style="display: none;" />
+                <!--2 gariin-->
                 <g id="arms" style="display: none;">
                     <line x1="120" y1="90" x2="90" y2="100" stroke="black" stroke-width="3" />
                     <line x1="120" y1="90" x2="150" y2="100" stroke="black" stroke-width="3" />
                 </g>
+                <!-- 2 huliiin-->
                 <g id="legs" style="display: none;">
                     <line x1="120" y1="120" x2="100" y2="150" stroke="black" stroke-width="3" />
                     <line x1="120" y1="120" x2="140" y2="150" stroke="black" stroke-width="3" />
@@ -58,14 +60,14 @@
             </svg>
         </div>
         
-        <div id="current-hint">Асуулт энд гарах болно...</div>
-        
+        <div id="current-hint">Асуулт энд гарна жүү...</div>
+        <!-- usgiig bagtaah durvuljin hairtsag-->
         <div id="word-container">
             <!-- Letter boxes will be generated here -->
         </div>
         
         <div id="keyboard">
-            <!-- Keyboard will be generated here -->
+            <!-- Keyboard aguulagdah heseg -->
         </div>
         
         <div style="margin-top: 20px;">
@@ -73,7 +75,7 @@
         </div>
     </div>
     
-    <!-- Game Over Modal -->
+    <!-- togloom duusah uyd garch ireh heseg -->
     <div id="game-over-modal" class="modal">
         <div class="modal-content">
             <h2>Тоглоом Дууслаа!</h2>
@@ -83,7 +85,7 @@
         </div>
     </div>
     
-    <!-- Scoreboard Modal -->
+    <!-- Scoreboard buyu top toglogchidiig harah hesg -->
     <div id="scoreboard-modal" class="modal">
         <div class="modal-content">
             <h2>TOP 10 Тоглогч</h2>
@@ -96,7 +98,7 @@
                     </tr>
                 </thead>
                 <tbody id="scoreboard-body">
-                    <!-- Scoreboard entries will be generated here -->
+                    <!-- Scoreboard iin oroltuudiig uusgene -->
                 </tbody>
             </table>
             <button id="close-scoreboard-btn">Буцах</button>
@@ -105,14 +107,14 @@
 
     <script>
         
-        // Mongolian keyboard layout
+        // Mongol keyboard iin husnegt
         const keyboardLayout = [
             ["Ф", "Ц", "У", "Ж", "Э", "Н", "Г", "Ш", "Ү", "З", "К", "E","Ъ"],
             ["Й", "Ы", "Б", "Ө", "А", "Х", "Р", "О", "Л", "Д", "П"],
             ["Я", "Ч", "Ё", "С", "М", "И", "Т", "Ь", "В","Ю"]
         ];
         
-        // DOM Elements
+        // DOM Elementuud
         const welcomeModal = document.getElementById("welcome-modal");
         const nicknameInput = document.getElementById("nickname-input");
         const startGameBtn = document.getElementById("start-game-btn");
@@ -132,7 +134,7 @@
         const scoreboardBody = document.getElementById("scoreboard-body");
         const currentHintElement = document.getElementById("current-hint");
         
-        // Hangman parts (4 parts total)
+        // Hangman burdel hesguud (4 hesegtei)
         const hangmanParts = [
             document.getElementById("head"),
             document.getElementById("body"),
@@ -140,7 +142,7 @@
             document.getElementById("legs")
         ];
         
-        // Initialize keyboard
+        // Mongol keyboard-iig ajilluulah heseg
         function initializeKeyboard() {
             keyboardElement.innerHTML = "";
             
@@ -162,33 +164,45 @@
             });
         }
         
-        // Initialize word display
+        // ugiig delgetsluu haruulah heseg
         function initializeWordDisplay() {
+
             wordContainer.innerHTML = "";
             
             for (let i = 0; i < gameData.currentWord.length; i++) {
+
                 const letterBox = document.createElement("div");
+
                 letterBox.className = "letter-box";
+
                 letterBox.dataset.index = i;
+
                 wordContainer.appendChild(letterBox);
             }
         }
         
-        // Select a random word
+        // random ugiig word.js file aas songon avna 
         function selectRandomWord() {
+
             const randomIndex = Math.floor(Math.random() * gameData.wordList.length);
+
             gameData.currentWord = gameData.wordList[randomIndex].word;
+
             gameData.currentHint = gameData.wordList[randomIndex].hint;
+
             currentHintElement.textContent = gameData.currentHint;
         }
         
-        // Handle letter guess
+        // Usgiig taamaglah heseg
         function handleLetterGuess(letter) {
+
             if (!gameData.isGameActive || gameData.guessedLetters.includes(letter)) {
+
                 return;
+
             }
             
-            // Mark letter as guessed
+            // Taasan ugiig temdegleh heseg
             gameData.guessedLetters.push(letter);
             const keys = document.querySelectorAll(".key");
             keys.forEach(key => {
@@ -198,7 +212,7 @@
             });
             
             if (gameData.currentWord.includes(letter)) {
-                // Correct guess
+                // Zuw taasan usgiig shalgana
                 let allLettersGuessed = true;
                 
                 for (let i = 0; i < gameData.currentWord.length; i++) {
@@ -213,31 +227,31 @@
                     }
                 }
                 
-                // Increase score
+                // Onoog nemeh heseg
                 gameData.score += 10;
                 scoreElement.textContent = gameData.score;
                 
-                // Check if word is complete
+                // herwee usgiig zuw taasan bol daraagiin usegruu shiljih
                 if (allLettersGuessed) {
-                    // Move to next word
+                    // daraagin usgiig songon
                     gameData.guessedLetters = [];
                     selectRandomWord();
                     initializeWordDisplay();
                     resetKeyboard();
                 }
             } else {
-                // Wrong guess
+                // usgiig buruu taaval hangman biyiin heseg zurj buruu taasan usgiig 1 r nemne
                 gameData.wrongGuesses++;
                 updateHangman();
                 
-                // Check if game over
+                // buruu taasan useg 4 bol togloom duussan esehiig shalgana
                 if (gameData.wrongGuesses >= 4) {
                     endGame(false);
                 }
             }
         }
         
-        // Reset keyboard
+        // taasan useg tsairch haragdana keyboardig shineshilen
         function resetKeyboard() {
             const keys = document.querySelectorAll(".key");
             keys.forEach(key => {
@@ -245,21 +259,21 @@
             });
         }
         
-        // Update hangman drawing
+        // hangman biyiin hesgiiig shinechleh heseg
         function updateHangman() {
             if (gameData.wrongGuesses > 0 && gameData.wrongGuesses <= hangmanParts.length) {
                 hangmanParts[gameData.wrongGuesses - 1].style.display = "block";
             }
         }
         
-        // Reset hangman drawing
+        // biyiin hesgiig shineshilen
         function resetHangman() {
             hangmanParts.forEach(part => {
                 part.style.display = "none";
             });
         }
         
-        // Start timer
+        // tsagiig tootsoh heseg ba tsag ni 60 s buurna
         function startTimer() {
             gameData.timerInterval = setInterval(() => {
                 gameData.timer--;
@@ -271,19 +285,19 @@
             }, 1000);
         }
         
-        // Update timer display
+        // tsagaa shinechilen
         function updateTimerDisplay() {
             const minutes = Math.floor(gameData.timer / 60);
             const seconds = gameData.timer % 60;
             timerElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
         }
         
-        // End game
+        // tsag duusaj togloom duussa esehiig shalgana
         function endGame(timeUp) {
             clearInterval(gameData.timerInterval);
             gameData.isGameActive = false;
             
-            // Show appropriate message
+            // tsag duusval daraah zurvasuud haragdana
             if (timeUp) {
                 gameOverMessage.textContent = "Цаг дууслаа!";
             } else {
@@ -292,24 +306,24 @@
             
             finalScoreElement.textContent = `Таны оноо: ${gameData.score}`;
             
-            // Update scoreboard
+            // scoreboard shinechilen
             updateScoreboard();
             
-            // Show game over modal
+            // game over modal iig haruulna
             gameOverModal.style.display = "flex";
         }
         
-        // Start a new game
+        // Shineer dahin togloomiig ehluuleh
         function startGame() {
             // Hide welcome modal and show game container
             welcomeModal.style.display = "none";
             gameContainer.style.display = "block";
             
-            // Set player name
+            // toglogciin neriig tohiruuln
             gameData.playerName = nicknameInput.value.trim() || "Тоглогч";
             playerNameElement.textContent = gameData.playerName;
             
-            // Save player name to cookie
+            // toglogciin neriig cookkie d hadgalna
             setCookie("playerName", gameData.playerName, 30);
             
             // Reset game state
@@ -320,42 +334,42 @@
             scoreElement.textContent = gameData.score;
             updateTimerDisplay();
             
-            // Reset hangman
+            // togloomooo ehluuleh reset hiine
             resetHangman();
             
-            // Select a random word
+            // ugee randomoor songoh
             selectRandomWord();
             
-            // Initialize game UI
+            // ui hesgiig heregjuulen
             initializeWordDisplay();
             initializeKeyboard();
             
-            // Start timer
+            // Start tsag
             gameData.isGameActive = true;
             startTimer();
         }
         
-        // Update scoreboard
+        // scoreboard shinecilen
         function updateScoreboard() {
-            // Get current scores from local storage
+            // local storage -aas buyu cookie nees toglogcdiin onoog avah
             let scores = JSON.parse(localStorage.getItem("hangmanScores")) || [];
             
-            // Add current score
+            // odoogiin score iig nemeh
             scores.push({
                 name: gameData.playerName,
                 score: gameData.score
             });
             
-            // Sort scores (highest first)
+            // onoogoor ni erembelen
             scores.sort((a, b) => b.score - a.score);
             
-            // Keep only top 10
+            // zuwhun ehnii 10 toglogciig
             scores = scores.slice(0, 10);
             
-            // Save back to local storage
+            // butsaaj cookie d hadgalna
             localStorage.setItem("hangmanScores", JSON.stringify(scores));
             
-            // Check if player made it to top 5
+            // toglogc top 5 d orson esehiig shalgana
             const playerRank = scores.findIndex(s => s.name === gameData.playerName && s.score === gameData.score) + 1;
             if (playerRank > 0 && playerRank <= 5) {
                 gameOverMessage.textContent = `Баяр хүргэе! Та TOP 5-д ${playerRank}-р байранд орлоо!`;
@@ -450,7 +464,7 @@
             return "";
         }
         
-        // Check for saved player name
+        // toglogciin ner hadgalagdsan esehig shalgana
         window.addEventListener("load", () => {
             const savedName = getCookie("playerName");
             if (savedName) {
