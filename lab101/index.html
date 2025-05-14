@@ -8,8 +8,8 @@
     <script src="word.js" defer></script>
     
 </head>
-<body>
-    <!-- Welcome Modal -->
+<body>    
+    
     <div id="welcome-modal" class="modal" style="display: flex;">
         <div class="modal-content">
             <h2>Монгол Дүүжлүүр Тоглоом</h2>
@@ -19,7 +19,7 @@
         </div>
     </div>
     
-    <!-- Game Container -->
+    <!-- Container heseg -->
     <div id="game-container" class="container">
         <div class="info-panel">
             <div class="info-item">
@@ -82,6 +82,7 @@
             <p id="game-over-message"></p>
             <p id="final-score"></p>
             <button id="play-again-btn">Дахин Тоглох</button>
+            <button id="go-to-login-btn">Нэвтрэх хэсэгт очих</button>
         </div>
     </div>
     
@@ -373,6 +374,8 @@
             const playerRank = scores.findIndex(s => s.name === gameData.playerName && s.score === gameData.score) + 1;
             if (playerRank > 0 && playerRank <= 5) {
                 gameOverMessage.textContent = `Баяр хүргэе! Та TOP 5-д ${playerRank}-р байранд орлоо!`;
+                
+                
             }
         }
         
@@ -471,6 +474,14 @@
                 nicknameInput.value = savedName;
             }
         });
+        const goToLoginBtn = document.getElementById("go-to-login-btn");
+
+goToLoginBtn.addEventListener("click", () => {
+    gameOverModal.style.display = "none";
+    gameContainer.style.display = "none";
+    welcomeModal.style.display = "flex";
+});
+
         
     </script>
 </body>
